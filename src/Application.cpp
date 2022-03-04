@@ -7,9 +7,7 @@ extern "C"
 
 static constexpr char* fontpath = "/System/Fonts/Asheville-Sans-14-Bold.pft";
 
-int Playdate::Application::onEvent(PlaydateAPI* pd,
-                               PDSystemEvent event,
-                               uint32_t arg) noexcept
+int Playdate::Application::onEvent(PlaydateAPI* pd, PDSystemEvent event, uint32_t arg) noexcept
 {
   if (event == kEventInit) {
     const char* err;
@@ -28,7 +26,6 @@ int Playdate::Application::onEvent(PlaydateAPI* pd,
 
 int Playdate::Application::update(void* userdata) noexcept
 {
-
   m_pd->graphics->clear(kColorWhite);
   m_pd->graphics->setFont(m_font);
 
