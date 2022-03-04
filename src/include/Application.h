@@ -12,9 +12,6 @@ extern "C" {
 namespace Playdate 
 {
 
-#define TEXT_WIDTH 86
-#define TEXT_HEIGHT 16
-
 class Application
 {
 public:
@@ -26,17 +23,12 @@ public:
 
 private:
 	LCDFont* m_font { };
-	int x { (400 - TEXT_WIDTH) / 2 };
-	int y { (240 - TEXT_HEIGHT) / 2 };
-	int dx { 1 };
-	int dy { 2 };
 	PlaydateAPI* m_pd { nullptr };
-	LCDBitmap* m_road { nullptr };
-
-
-	LCDBitmap* m_ghost { nullptr };
 
 	std::unique_ptr<TD::Assets> m_assets {};
+
+	uint32_t m_ghostOffset { 0 };
+	int m_ghostDy { 1 };
 };
 
 }
